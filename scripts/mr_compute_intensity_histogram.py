@@ -30,7 +30,7 @@ def main():
     args = parser.parse_args()
 
     if not os.path.isfile(args.in_image):
-        raise ValueError('{} does not exist!'.format(args.in_image))
+        raise IOError('{} does not exist!'.format(args.in_image))
 
     data = nib.load(args.in_image).get_fdata()
     display_histogram(data, log=args.log, nb_bins=args.nb_bins)
