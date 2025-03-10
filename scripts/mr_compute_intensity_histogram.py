@@ -7,11 +7,12 @@ Display an histogram of intensities.
 
 import argparse
 import os
-
+import sys
 import nibabel as nib
 
 from my_research.utils.image import display_histogram
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 def _build_arg_parser():
     p = argparse.ArgumentParser(
